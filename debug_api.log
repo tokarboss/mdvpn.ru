@@ -1,0 +1,425 @@
+--- GET INBOUNDS LIST ---
+{
+    "success": true,
+    "msg": "",
+    "obj": [
+        {
+            "id": 1,
+            "up": 106753291,
+            "down": 2751202009,
+            "total": 0,
+            "remark": "Hysteria",
+            "subSortIndex": 1,
+            "enable": true,
+            "expiryTime": 0,
+            "trafficReset": "never",
+            "lastTrafficResetTime": 0,
+            "clientStats": [
+                {
+                    "id": 7,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "2zmhv6f0hk",
+                    "uuid": "bbbf0c85-cb1d-40fc-9935-3e9c8c05c53b",
+                    "subId": "ydarlw6z133k6180",
+                    "up": 102937009,
+                    "down": 2747938087,
+                    "expiryTime": 0,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 1783584875007
+                },
+                {
+                    "id": 8,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "ZeroTolerance",
+                    "uuid": "ff6bec77-3791-48cd-a16b-fa636f0e77bf",
+                    "subId": "zk9thfe4bui4an3b",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1798657200000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 9,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "NoNamed",
+                    "uuid": "4d519e3e-feb0-44e2-8eee-6263b4aa9e3e",
+                    "subId": "yf9dl1a83ktyce3p",
+                    "up": 17990,
+                    "down": 169436,
+                    "expiryTime": 1798657200000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 1783582478005
+                },
+                {
+                    "id": 10,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "4ksqly8a9v",
+                    "uuid": "6fa9c5d3-9c0a-402c-ab0e-caabf34f98b8",
+                    "subId": "uzowrrqfok3oc1lc",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 0,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 11,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783583147",
+                    "uuid": "",
+                    "subId": "0069f514-2573-4096-9a57-41d928d7d85f",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 12,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783583391",
+                    "uuid": "",
+                    "subId": "aa2a8721-f442-4cbb-9e84-f491fb04abb3",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 13,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783583997",
+                    "uuid": "ebcf037a-7aac-41cb-a83e-4f3f115ad8b7",
+                    "subId": "6b9998a4-a2a1-44f8-88b0-c24eda5e6e44",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 14,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783584625",
+                    "uuid": "a0b7caba-a340-4e89-8cbd-7ca5137e7395",
+                    "subId": "42446e62-ed20-446c-a6ec-9bfc3568a9dc",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 15,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783584700",
+                    "uuid": "a7a66e5a-3653-44b9-a204-9fc6d6a7abc6",
+                    "subId": "e3e6f672-33df-4c79-bb25-a55a6a703200",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 16,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783584797",
+                    "uuid": "4130c886-a9f7-4f0a-99c6-76c438f5f1ee",
+                    "subId": "52806018-5069-4dc7-8334-0738d5d2f00a",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                },
+                {
+                    "id": 17,
+                    "inboundId": 1,
+                    "enable": true,
+                    "email": "dev_126_1783584877",
+                    "uuid": "0d9594e5-3620-4b88-8155-0c6211d7317c",
+                    "subId": "a417335b-d403-41b2-b9ea-ff1a84ef40d9",
+                    "up": 0,
+                    "down": 0,
+                    "expiryTime": 1897593470000,
+                    "total": 0,
+                    "reset": 0,
+                    "lastOnline": 0
+                }
+            ],
+            "listen": "",
+            "port": 8443,
+            "protocol": "hysteria",
+            "tag": "in-8443-udp",
+            "shareAddrStrategy": "listen",
+            "shareAddr": "",
+            "originNodeGuid": "f0a30470-2a46-42c2-85c4-fc921204a6f7",
+            "settings": {
+                "clients": [
+                    {
+                        "auth": "3bpkcdvwd98cgwe5",
+                        "comment": "",
+                        "created_at": 1783269482084,
+                        "email": "2zmhv6f0hk",
+                        "enable": true,
+                        "expiryTime": 0,
+                        "id": "bbbf0c85-cb1d-40fc-9935-3e9c8c05c53b",
+                        "limitIp": 0,
+                        "password": "8bbwoh8yzzoq7vpu",
+                        "reset": 0,
+                        "security": "auto",
+                        "subId": "ydarlw6z133k6180",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783269482000
+                    },
+                    {
+                        "auth": "n9u5pygvm5sw7k9q",
+                        "comment": "",
+                        "created_at": 1783580582177,
+                        "email": "ZeroTolerance",
+                        "enable": true,
+                        "expiryTime": 1798657200000,
+                        "id": "ff6bec77-3791-48cd-a16b-fa636f0e77bf",
+                        "limitIp": 0,
+                        "password": "dww5wxolfv2epbtr",
+                        "reset": 0,
+                        "security": "auto",
+                        "subId": "zk9thfe4bui4an3b",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783580649000
+                    },
+                    {
+                        "auth": "8q1lo3nrsqs98cte",
+                        "comment": "",
+                        "created_at": 1783580745708,
+                        "email": "NoNamed",
+                        "enable": true,
+                        "expiryTime": 1798657200000,
+                        "id": "4d519e3e-feb0-44e2-8eee-6263b4aa9e3e",
+                        "limitIp": 0,
+                        "password": "biqklnfe64k62hwd",
+                        "reset": 0,
+                        "security": "auto",
+                        "subId": "yf9dl1a83ktyce3p",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783580745000
+                    },
+                    {
+                        "auth": "6vczrmxtf2fclf5c",
+                        "comment": "",
+                        "created_at": 1783582299224,
+                        "email": "4ksqly8a9v",
+                        "enable": true,
+                        "expiryTime": 0,
+                        "id": "6fa9c5d3-9c0a-402c-ab0e-caabf34f98b8",
+                        "limitIp": 0,
+                        "password": "6njnywjcfyap16nz",
+                        "reset": 0,
+                        "security": "auto",
+                        "subId": "uzowrrqfok3oc1lc",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783582299000
+                    },
+                    {
+                        "auth": "c0665b60614143e19dc694da3013bd42",
+                        "comment": "",
+                        "created_at": 1783583148201,
+                        "email": "dev_126_1783583147",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "0069f514-2573-4096-9a57-41d928d7d85f",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783583148000
+                    },
+                    {
+                        "auth": "81cfe39da3d94c8aa5bfcd44ac188c2f",
+                        "comment": "",
+                        "created_at": 1783583391817,
+                        "email": "dev_126_1783583391",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "aa2a8721-f442-4cbb-9e84-f491fb04abb3",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783583391000
+                    },
+                    {
+                        "auth": "faee5913833d43e2905feeb151bc1908",
+                        "comment": "",
+                        "created_at": 1783583997594,
+                        "email": "dev_126_1783583997",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "id": "ebcf037a-7aac-41cb-a83e-4f3f115ad8b7",
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "6b9998a4-a2a1-44f8-88b0-c24eda5e6e44",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783583997000
+                    },
+                    {
+                        "auth": "4a98d324e110450880308dc31c5adb29",
+                        "comment": "",
+                        "created_at": 1783584625594,
+                        "email": "dev_126_1783584625",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "id": "a0b7caba-a340-4e89-8cbd-7ca5137e7395",
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "42446e62-ed20-446c-a6ec-9bfc3568a9dc",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783584625000
+                    },
+                    {
+                        "auth": "81c1e739012b4635a5049edad34b78ec",
+                        "comment": "",
+                        "created_at": 1783584701087,
+                        "email": "dev_126_1783584700",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "id": "a7a66e5a-3653-44b9-a204-9fc6d6a7abc6",
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "e3e6f672-33df-4c79-bb25-a55a6a703200",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783584701000
+                    },
+                    {
+                        "auth": "fe8da0e355324980b870d49b927e313c",
+                        "comment": "",
+                        "created_at": 1783584797852,
+                        "email": "dev_126_1783584797",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "id": "4130c886-a9f7-4f0a-99c6-76c438f5f1ee",
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "52806018-5069-4dc7-8334-0738d5d2f00a",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783584797000
+                    },
+                    {
+                        "auth": "0fdfaa7d0e09499183b9805d75c0ce7e",
+                        "comment": "",
+                        "created_at": 1783584877993,
+                        "email": "dev_126_1783584877",
+                        "enable": true,
+                        "expiryTime": 1897593470000,
+                        "id": "0d9594e5-3620-4b88-8155-0c6211d7317c",
+                        "limitIp": 0,
+                        "reset": 0,
+                        "security": "",
+                        "subId": "a417335b-d403-41b2-b9ea-ff1a84ef40d9",
+                        "tgId": 0,
+                        "totalGB": 0,
+                        "updated_at": 1783584877000
+                    }
+                ],
+                "version": 2
+            },
+            "streamSettings": {
+                "network": "hysteria",
+                "hysteriaSettings": {
+                    "version": 2,
+                    "udpIdleTimeout": 60,
+                    "masquerade": {
+                        "type": "",
+                        "dir": "",
+                        "url": "",
+                        "rewriteHost": false,
+                        "insecure": false,
+                        "content": "",
+                        "headers": [],
+                        "statusCode": 0
+                    }
+                },
+                "security": "tls",
+                "tlsSettings": {
+                    "serverName": "",
+                    "minVersion": "1.3",
+                    "maxVersion": "1.3",
+                    "cipherSuites": "",
+                    "rejectUnknownSni": false,
+                    "disableSystemRoot": false,
+                    "enableSessionResumption": false,
+                    "certificates": [
+                        {
+                            "certificateFile": "\/root\/cert\/xlg.mdvpn.ru\/fullchain.pem",
+                            "keyFile": "\/root\/cert\/xlg.mdvpn.ru\/privkey.pem",
+                            "ocspStapling": 0,
+                            "oneTimeLoading": false,
+                            "usage": "encipherment",
+                            "buildChain": false
+                        }
+                    ],
+                    "alpn": [
+                        "h3"
+                    ],
+                    "echServerKeys": "",
+                    "settings": {
+                        "fingerprint": "chrome",
+                        "echConfigList": "",
+                        "pinnedPeerCertSha256": [],
+                        "verifyPeerCertByName": ""
+                    }
+                },
+                "finalmask": {
+                    "udp": [
+                        {
+                            "type": "salamander",
+                            "settings": {
+                                "password": "4hsyq76ohsiz527j"
+                            }
+                        }
+                    ]
+                }
+            },
+            "sniffing": {
+                "enabled": false
+            }
+        }
+    ]
+}

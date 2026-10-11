@@ -1,0 +1,19 @@
+2026-05-02 02:02:37 - Array
+(
+)
+
+2026-05-02 02:04:17 - Array
+(
+    [MERCHANT_ID] => 72404
+    [AMOUNT] => 10
+    [intid] => 299012132
+    [MERCHANT_ORDER_ID] => 1777676641
+    [P_EMAIL] => clockworkstore88@gmail.com
+    [P_PHONE] => 
+    [CUR_ID] => 1
+    [payer_account] => F7202577670631744
+    [commission] => 0.7
+    [SIGN] => 755e876b101ccb03bc87ac5648ed4bd7
+    [us_user] => 67
+)
+

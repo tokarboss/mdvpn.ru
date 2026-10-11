@@ -1,0 +1,12 @@
+{
+    "OSOBOV77": {
+        "max_uses": 50,
+        "current_uses": 0,
+        "active": true
+    },
+    "TIKTOK50": {
+        "max_uses": 10,
+        "current_uses": 0,
+        "active": true
+    }
+}

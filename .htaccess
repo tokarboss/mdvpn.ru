@@ -1,30 +1,3 @@
-RewriteEngine On
-
-# 1. ЗАЩИТА: Прячем файл с промокодами
 <Files "promocodes.json">
     Require all denied
 </Files>
-
-# 2. УБИРАЕМ "index.html" и "index.php" (Редирект на чистую папку)
-# Если кто-то зайдет на site.ru/lk/index.html, его перекинет на site.ru/lk/
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^/]+/)*index\.(html|php)\ HTTP/
-RewriteRule ^(([^/]+/)*)index\.(html|php)$ /$1 [R=301,L]
-
-# 3. УБИРАЕМ РАСШИРЕНИЯ .html и .php (Внешний редирект)
-# ДОБАВЛЕНО ИСКЛЮЧЕНИЕ: Не трогать папку /api/ (чтобы не ломать платежки)
-RewriteCond %{REQUEST_URI} !^/api/
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.]+)\.(html|php)\ HTTP/
-RewriteRule ^([^.]+)\.(html|php)$ /$1 [R=301,L]
-
-# 4. ПОДКЛЮЧАЕМ ФАЙЛЫ НЕВИДИМО (Внутренняя маршрутизация)
-# Если ввели site.ru/lk/login, сервер сам найдет login.html и покажет его
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [L]
-
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
-
-# 5. ГЛАВНАЯ СТРАНИЦА ПО УМОЛЧАНИЮ
-DirectoryIndex index.html index.php
