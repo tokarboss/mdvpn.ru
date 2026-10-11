@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="robots" content="all"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Безопасный и быстрый VPN по протоколу Xray. Получите 2 дня пробного периода бесплатно при привязке VK ID. Стабильный доступ к любым ресурсам.">
+    <meta name="keywords" content="купить vpn, xray vless, быстрый впн, mdvpn, vpn с тестовым периодом, vpn через вк">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mdvpn.ru/">
+    <meta property="og:title" content="MDVPN — Твой пропуск в свободный интернет">
+    <meta property="og:description" content="Попробуй передовой VPN протокол бесплатно на 2 дня. Настройка за 60 секунд.">
+    <meta name="theme-color" content="#060911">
+<link rel="canonical" href="https://mdvpn.ru/">
+
+
+    <title>MDVPN — Приватный & Ультра-Быстрый VPN</title>
+
+    <!-- Сохранение реферального ID -->
+    <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ref = urlParams.get('ref');
+    if (ref) {
+        localStorage.setItem('mdvpn_ref', ref);
+    }
+    </script>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        vk: { blue: '#0077ff', hover: '#0066cc' }
+                    },
+                    animation: {
+                        'pulse-glow': 'pulseGlow 3s infinite ease-in-out',
+                        'spin-slow': 'spin 12s linear infinite',
+                    },
+                    keyframes: {
+                        pulseGlow: {
+                            '0%, 100%': { opacity: '0.4', transform: 'scale(1)' },
+                            '50%': { opacity: '0.8', transform: 'scale(1.03)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Phosphor Icons CDN -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <style>
+        :root {
+            --bg-main: #060911;
+            --card-bg: rgba(13, 19, 33, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover-border: rgba(56, 189, 248, 0.4);
+            --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.25);
+            --text-primary: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        html.theme-cyber {
+            --bg-main: #080312;
+            --card-bg: rgba(22, 11, 40, 0.8);
+            --card-border: rgba(181, 55, 242, 0.25);
+            --card-hover-border: rgba(0, 243, 255, 0.6);
+            --accent-color: #00f3ff;
+            --accent-glow: rgba(0, 243, 255, 0.35);
+            --text-primary: #FFFFFF;
+            --text-muted: #A78BFA;
+        }
+
+        html.theme-monochrome {
+            --bg-main: #08080A;
+            --card-bg: rgba(18, 18, 22, 0.85);
+            --card-border: rgba(255, 255, 255, 0.1);
+            --card-hover-border: rgba(255, 255, 255, 0.4);
+            --accent-color: #FFFFFF;
+            --accent-glow: rgba(255, 255, 255, 0.15);
+            --text-primary: #FFFFFF;
+            --text-muted: #888890;
+        }
+
+        html.theme-titanium {
+            --bg-main: #0B0F14;
+            --card-bg: rgba(20, 26, 35, 0.85);
+            --card-border: rgba(255, 255, 255, 0.07);
+            --card-hover-border: rgba(16, 185, 129, 0.4);
+            --accent-color: #10B981;
+            --accent-glow: rgba(16, 185, 129, 0.25);
+            --text-primary: #F3F4F6;
+            --text-muted: #9CA3AF;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--card-border);
+            border-radius: 1.25rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            border-color: var(--card-hover-border);
+            box-shadow: 0 10px 30px -10px var(--accent-glow);
+        }
+
+        .btn-primary, .btn-accent, .btn-vk, .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            border-radius: 0.85rem;
+            transition: all 0.25s ease;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+            color: #0F172A;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.25);
+            background: #FFFFFF;
+        }
+
+        .btn-accent {
+            background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.3);
+        }
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.5);
+        }
+
+        .btn-vk {
+            background: linear-gradient(135deg, #0077ff 0%, #0055cc 100%);
+            color: #FFFFFF;
+            box-shadow: 0 4px 18px rgba(0, 119, 255, 0.35);
+        }
+        .btn-vk:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 119, 255, 0.55);
+            background: linear-gradient(135deg, #1a85ff 0%, #0066ee 100%);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .featured-plan-card {
+            background: linear-gradient(180deg, rgba(14, 165, 233, 0.12) 0%, rgba(13, 19, 33, 0.85) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+            box-shadow: 0 0 40px -10px rgba(56, 189, 248, 0.25);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 50%, #38BDF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden selection:bg-sky-500/30 antialiased">
+
+    <!-- CANVAS BACKGROUND -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- TOAST NOTIFICATIONS -->
+    <div id="toast-container" class="fixed top-5 right-5 z-[10000] flex flex-col gap-3 pointer-events-none"></div>
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/75 border-b border-white/10 px-4 md:px-8 py-3.5">
+        <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+            
+            <!-- Logo -->
+            <a href="/" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform">
+                    <i class="ph-bold ph-lightning text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <div class="flex items-center gap-2">
+                        <span class="text-lg font-extrabold tracking-tight text-white">MDVPN</span>
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    </div>
+                    <span class="text-[10px] font-mono text-slate-400 -mt-1">VLESS Reality • 10 Gbps</span>
+                </div>
+            </a>
+
+            <!-- Main Navigation Links -->
+            <nav class="hidden lg:flex items-center gap-6 text-xs font-semibold text-slate-300">
+                <a href="#pricing" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="ph-bold ph-tag"></i> Тарифы</a>
+                <a href="#affiliate" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="ph-bold ph-users-three"></i> Партнерка (20%)</a>
+                <a href="blog.html" class="hover:text-white transition-colors flex items-center gap-1.5"><i class="ph-bold ph-article"></i> Блог</a>
+            </nav>
+
+            <!-- Navigation & Social Buttons -->
+            <div class="flex items-center gap-2.5">
+                <!-- Theme Selector -->
+<div class="relative">
+    <button onclick="toggleThemeMenu(event)" class="p-2.5 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:bg-white/10 transition-all text-sm flex items-center gap-1.5" title="Выбрать тему">
+        <i class="ph-bold ph-palette text-sky-400"></i>
+        <span id="current-theme-label" class="hidden md:inline text-xs font-mono">Obsidian</span>
+    </button>
+    
+    <div id="theme-dropdown" class="hidden absolute right-0 top-full mt-2 w-48 glass-card p-2 shadow-2xl z-50">
+        <div class="text-[10px] font-mono uppercase text-slate-400 px-2.5 py-1 mb-1 border-b border-white/5">Оформление</div>
+        <button onclick="setTheme('obsidian')" class="w-full text-left px-2.5 py-2 text-xs font-medium rounded-lg hover:bg-white/10 flex items-center gap-2 text-slate-200">
+            <span class="w-2.5 h-2.5 rounded-full bg-sky-400"></span> Obsidian Dark
+        </button>
+        <button onclick="setTheme('cyber')" class="w-full text-left px-2.5 py-2 text-xs font-medium rounded-lg hover:bg-white/10 flex items-center gap-2 text-slate-200">
+            <span class="w-2.5 h-2.5 rounded-full bg-pink-500"></span> Cyber Neon
+        </button>
+        <button onclick="setTheme('monochrome')" class="w-full text-left px-2.5 py-2 text-xs font-medium rounded-lg hover:bg-white/10 flex items-center gap-2 text-slate-200">
+            <span class="w-2.5 h-2.5 rounded-full bg-slate-200"></span> Monochrome
+        </button>
+        <button onclick="setTheme('titanium')" class="w-full text-left px-2.5 py-2 text-xs font-medium rounded-lg hover:bg-white/10 flex items-center gap-2 text-slate-200">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400"></span> Titanium Slate
+        </button>
+    </div>
+</div>
+
+                <a href="https://t.me/mdvpn_ru" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-white/5 border border-white/10 text-slate-300 hover:text-white hover:bg-white/10 transition-all text-sm flex items-center justify-center" title="Канал Telegram">
+                    <i class="ph-bold ph-telegram-logo text-base"></i>
+                </a>
+
+                <a href="/lk/login" class="px-5 py-2 text-xs font-bold rounded-xl transition-all bg-white/10 text-white shadow border border-white/20 hover:bg-white/20 flex items-center gap-2">
+                    <i class="ph-bold ph-user-circle text-lg"></i> В кабинет
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="relative z-10 transition-opacity duration-300">
+        
+        <!-- HERO SECTION -->
+        <section class="max-w-6xl mx-auto text-center pt-16 md:pt-24 pb-16 px-4">
+            
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-xs font-mono text-sky-300 mb-8 shadow-inner">
+                <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+                Протокол Xray VLESS Reality • Обход DPI
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-white">
+                Бесшумная скорость. <br/>
+                <span class="gradient-text">
+                    Полная свобода сети.
+                </span>
+            </h1>
+            
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto mb-10 leading-relaxed font-normal">
+                Защищенный высокоскоростной доступ без замедления YouTube, Discord, Twitch и соцсетей. Настройка за 60 секунд.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <button onclick="document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });" class="btn-accent px-8 py-3.5 text-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                    <i class="ph-bold ph-lightning text-lg"></i> Выбрать тариф
+                </button>
+                <a href="https://vk.com/mdvpn_ru" target="_blank" rel="noopener noreferrer" class="btn-vk px-8 py-3.5 text-sm w-full sm:w-auto flex items-center justify-center gap-2">
+                    <i class="ph-bold ph-vk-logo text-lg"></i> Группа ВКонтакте
+                </a>
+            </div>
+
+            <!-- NETWORK METRICS -->
+            <div id="features" class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16 text-left pt-8">
+                <div class="glass-card p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[11px] font-mono text-slate-400 uppercase">Скорость канала</span>
+                        <i class="ph-bold ph-trend-up text-sky-400"></i>
+                    </div>
+                    <div class="text-2xl font-extrabold text-white">10 Gbit/s</div>
+                    <div class="text-[10px] text-slate-500 mt-1">Идеально для стриминга в 4K</div>
+                </div>
+                <div class="glass-card p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[11px] font-mono text-slate-400 uppercase">Доступность</span>
+                        <i class="ph-bold ph-globe-hemisphere-west text-emerald-400"></i>
+                    </div>
+                    <div class="text-xl font-extrabold text-emerald-400 mt-1">Весь мир открыт</div>
+                    <div class="text-[10px] text-slate-500 mt-1">Netflix, Spotify, ChatGPT, Instagram</div>
+                </div>
+                <div class="glass-card p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[11px] font-mono text-slate-400 uppercase">Логирование</span>
+                        <i class="ph-bold ph-shield-check text-purple-400"></i>
+                    </div>
+                    <div class="text-xl font-extrabold text-purple-300 mt-1">Strict No-Logs</div>
+                    <div class="text-[10px] text-slate-500 mt-1">Абсолютная анонимность сети</div>
+                </div>
+                <div class="glass-card p-5">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-[11px] font-mono text-slate-400 uppercase">Платформы</span>
+                        <i class="ph-bold ph-devices text-sky-400"></i>
+                    </div>
+                    <div class="flex gap-2 mt-2">
+                        <i class="ph-fill ph-apple-logo text-2xl text-white"></i>
+                        <i class="ph-fill ph-android-logo text-2xl text-white"></i>
+                        <i class="ph-fill ph-windows-logo text-2xl text-white"></i>
+                    </div>
+                    <div class="text-[10px] text-slate-500 mt-1">iOS, Android, Win, Mac, Linux</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRICING SECTION -->
+        <section id="pricing" class="py-16 max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono text-slate-400 mb-3">
+                    <i class="ph-bold ph-sparkle text-sky-400"></i> Гибкая подписка
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-extrabold mb-4 text-white">Тарифные планы</h2>
+                <p class="text-slate-400 text-sm max-w-md mx-auto">Поддержка любых устройств. Никаких скрытых списаний.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 items-stretch">
+                
+                <!-- 1. TEST-DRIVE (0 ₽) -->
+                <div class="glass-card p-6 flex flex-col justify-between relative group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-mono uppercase text-slate-400 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">Старт</span>
+                            <span class="text-xs font-semibold text-slate-400">2 дня</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Тест-драйв</h3>
+                        <p class="text-xs text-slate-400 mb-6">Проверьте скорость на своем устройстве абсолютно бесплатно.</p>
+                        
+                        <div class="flex items-baseline gap-1 mb-6 border-b border-white/5 pb-6">
+                            <span class="text-4xl font-extrabold text-white">0 ₽</span>
+                            <span class="text-slate-500 text-xs">/ 2 дня</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8 font-normal">
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-emerald-400"></i> Без ограничений скорости</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-emerald-400"></i> Протокол VLESS Reality</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-vk-logo text-sky-400"></i> Нужен VK ID</li>
+                        </ul>
+                    </div>
+                    <a href="/lk/login" class="btn-secondary w-full py-3 text-xs">
+                        Попробовать
+                    </a>
+                </div>
+
+                <!-- 2. MONTHLY (190 ₽) -->
+                <div class="glass-card p-6 flex flex-col justify-between relative group hover:-translate-y-1">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="text-[11px] font-mono uppercase text-slate-400 bg-white/5 px-2.5 py-1 rounded-md border border-white/5">1 Месяц</span>
+                            <span class="text-xs font-semibold text-slate-400">30 дней</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Стандарт</h3>
+                        <p class="text-xs text-slate-400 mb-6">Стандартный тариф для повседневного серфинга.</p>
+                        
+                        <div class="flex items-baseline gap-1 mb-6 border-b border-white/5 pb-6">
+                            <span class="text-4xl font-extrabold text-white">190 ₽</span>
+                            <span class="text-slate-500 text-xs">/ мес</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8 font-normal">
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-emerald-400"></i> 1 устройство</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-emerald-400"></i> Все локации серверов</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-emerald-400"></i> Поддержка 24/7</li>
+                        </ul>
+                    </div>
+                    <a href="/lk/" class="btn-secondary w-full py-3 text-xs">
+                        Оформить на месяц
+                    </a>
+                </div>
+
+                <!-- 3. PRO MAX (490 ₽) - POPULAR -->
+                <div class="glass-card featured-plan-card p-6 flex flex-col justify-between relative group hover:-translate-y-1.5 transition-all">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-400 to-blue-500 text-slate-950 text-[10px] font-black uppercase px-3 py-1 rounded-full tracking-wider shadow-lg shadow-sky-500/30 flex items-center gap-1">
+                        <i class="ph-bold ph-fire"></i> Хит Продаж
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-3 mt-1">
+                            <span class="text-[11px] font-mono uppercase text-sky-400 bg-sky-500/10 px-2.5 py-1 rounded-md border border-sky-500/20">3 Месяца</span>
+                            <span class="text-xs font-semibold text-sky-300">163 ₽ / мес</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Pro Max</h3>
+                        <p class="text-xs text-slate-300 mb-6">Оптимальный выбор с максимальной скоростью и бонусами.</p>
+                        
+                        <div class="flex items-baseline gap-1 mb-6 border-b border-white/10 pb-6">
+                            <span class="text-4xl font-extrabold text-sky-400">490 ₽</span>
+                            <span class="text-slate-400 text-xs">/ 3 месяца</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-xs text-slate-200 mb-8 font-normal">
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-sky-400"></i> До 3 устройств</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-sky-400"></i> Выделенный канал</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-gift text-sky-400"></i> +3 спина в подарок</li>
+                        </ul>
+                    </div>
+                    <a href="/lk/" class="btn-accent w-full py-3 text-xs">
+                        Купить выгодно
+                    </a>
+                </div>
+
+                <!-- 4. ULTRA VIP (1490 ₽) - ANNUAL -->
+                <div class="glass-card p-6 flex flex-col justify-between relative group hover:-translate-y-1">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-purple-500 text-white text-[10px] font-bold uppercase px-3 py-1 rounded-full tracking-wider shadow-lg">
+                        Выгода 40%
+                    </div>
+                    <div>
+                        <div class="flex items-center justify-between mb-3 mt-1">
+                            <span class="text-[11px] font-mono uppercase text-purple-400 bg-purple-500/10 px-2.5 py-1 rounded-md border border-purple-500/20">1 Год</span>
+                            <span class="text-xs font-semibold text-purple-300">124 ₽ / мес</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-white">Ultra</h3>
+                        <p class="text-xs text-slate-400 mb-6">Максимальная подписка на целый год без переживаний.</p>
+                        
+                        <div class="flex items-baseline gap-1 mb-6 border-b border-white/5 pb-6">
+                            <span class="text-4xl font-extrabold text-white">1490 ₽</span>
+                            <span class="text-slate-500 text-xs">/ 12 месяцев</span>
+                        </div>
+                        
+                        <ul class="space-y-3 text-xs text-slate-300 mb-8 font-normal">
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-purple-400"></i> До 5 устройств</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-purple-400"></i> Макс. анонимность</li>
+                            <li class="flex items-center gap-2.5"><i class="ph-bold ph-check text-purple-400"></i> VIP поддержка 24/7</li>
+                        </ul>
+                    </div>
+                    <a href="/lk/" class="btn-secondary w-full py-3 text-xs hover:border-purple-500/50">
+                        Оформить Ultra
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- AFFILIATE PROGRAM OVERVIEW SECTION -->
+        <section id="affiliate" class="py-16 max-w-6xl mx-auto px-4">
+            <div class="glass-card p-8 md:p-12 relative overflow-hidden bg-gradient-to-br from-slate-900/90 via-slate-950 to-blue-950/40 border-sky-500/30">
+                <div class="absolute -right-20 -bottom-20 w-80 h-80 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-7">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-xs font-mono text-emerald-400 mb-4">
+                            <i class="ph-bold ph-coins text-base"></i> Выплаты 20% с каждого пополнения
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+                            Зарабатывайте с нами на <br/><span class="gradient-text">Партнерской программе</span>
+                        </h2>
+                        <p class="text-slate-300 text-sm leading-relaxed mb-6">
+                            Приглашайте друзей, блогеров и знакомых в MDVPN. Вы будете получать 20% от каждого пополнения счета вашими рефералами реальными деньгами на баланс — пожизненно!
+                        </p>
+
+                        <div class="flex flex-wrap gap-3">
+                            <a href="/lk/" class="btn-accent px-6 py-3 text-xs flex items-center gap-2">
+                                <i class="ph-bold ph-share-network text-lg"></i> Получить реферальную ссылку
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-slate-950/70 p-6 rounded-2xl border border-white/10 space-y-4">
+                        <h3 class="text-sm font-bold text-white flex items-center gap-2 pb-3 border-b border-white/10">
+                            <i class="ph-bold ph-steps text-sky-400 text-lg"></i> Как это работает?
+                        </h3>
+                        
+                        <div class="space-y-3 text-xs">
+                            <div class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 font-mono font-bold flex items-center justify-center shrink-0">1</span>
+                                <div>
+                                    <div class="font-bold text-white">Скопируйте ссылку</div>
+                                    <div class="text-slate-400 text-[11px]">В вашем личном кабинете доступна персональная ссылка.</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-lg bg-sky-500/20 text-sky-400 font-mono font-bold flex items-center justify-center shrink-0">2</span>
+                                <div>
+                                    <div class="font-bold text-white">Делитесь с друзьями</div>
+                                    <div class="text-slate-400 text-[11px]">Отправляйте ссылку в мессенджерах или размещайте у себя.</div>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <span class="w-6 h-6 rounded-lg bg-emerald-500/20 text-emerald-400 font-mono font-bold flex items-center justify-center shrink-0">3</span>
+                                <div>
+                                    <div class="font-bold text-white">Получайте деньги</div>
+                                    <div class="text-slate-400 text-[11px]">Мгновенное начисление комиссии за каждую оплату!</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPEEDTEST SECTION -->
+        <section id="speedtest" class="py-16 max-w-5xl mx-auto px-4">
+            <div class="glass-card p-6 md:p-10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+                
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 mb-4">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Live Ping Test
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-white">Проверьте скорость вашего узла</h3>
+                        <p class="text-slate-400 text-xs sm:text-sm leading-relaxed mb-6">
+                            Наши серверы оптимизированы для передачи тяжелого видеопотока 4K, игрового трафика и защиты от любых блокировок.
+                        </p>
+                        
+                        <div class="space-y-2.5 font-mono text-xs mb-6">
+                            <div class="flex justify-between p-2.5 rounded-lg bg-white/5 border border-white/5">
+                                <span class="text-slate-300">🇩🇪 Франкфурт (DE-1)</span>
+                                <span class="text-emerald-400 font-bold">14 ms</span>
+                            </div>
+                            <div class="flex justify-between p-2.5 rounded-lg bg-white/5 border border-white/5">
+                                <span class="text-slate-300">🇳🇱 Амстердам (NL-2)</span>
+                                <span class="text-emerald-400 font-bold">19 ms</span>
+                            </div>
+                            <div class="flex justify-between p-2.5 rounded-lg bg-white/5 border border-white/5">
+                                <span class="text-slate-300">🇫🇮 Хельсинки (FI-1)</span>
+                                <span class="text-emerald-400 font-bold">12 ms</span>
+                            </div>
+                        </div>
+
+                        <button onclick="runSpeedTest()" id="btn-speedtest" class="btn-secondary px-6 py-3 text-xs w-full sm:w-auto flex items-center justify-center gap-2">
+                            <i class="ph-bold ph-play text-sky-400"></i> Запустить Спидтест
+                        </button>
+                    </div>
+
+                    <!-- Speedometer Dial -->
+                    <div class="flex flex-col items-center justify-center p-6 bg-slate-950/60 rounded-2xl border border-white/10 text-center">
+                        <div class="text-[10px] font-mono uppercase text-slate-400 mb-2">Задержка и Ширина Канала</div>
+                        <div id="speed-meter-value" class="text-5xl font-extrabold text-sky-400 font-mono my-4">
+                            0 <span class="text-sm text-slate-400 font-sans">Mbps</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-2.5 rounded-full overflow-hidden mb-3">
+                            <div id="speed-bar" class="bg-gradient-to-r from-sky-400 to-emerald-400 h-full w-0 transition-all duration-300"></div>
+                        </div>
+                        <div id="speed-status" class="text-xs text-slate-400 font-mono">Нажмите «Запустить» для теста</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SETUP GUIDE SECTION -->
+        <section id="guide" class="py-16 max-w-5xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <h2 class="text-2xl sm:text-4xl font-extrabold mb-3 text-white">Простая установка за 1 минуту</h2>
+                <p class="text-slate-400 text-xs sm:text-sm">Подходит для любых устройств. Выберите вашу операционную систему.</p>
+            </div>
+
+            <!-- OS Tabs -->
+            <div class="flex justify-center flex-wrap gap-2 mb-8">
+                <button onclick="switchGuideTab('ios')" id="tab-ios" class="px-4 py-2 rounded-xl text-xs font-bold border bg-white/10 border-white/20 text-white flex items-center gap-2">
+                    <i class="ph-bold ph-apple-logo text-base"></i> iOS / iPhone
+                </button>
+                <button onclick="switchGuideTab('android')" id="tab-android" class="px-4 py-2 rounded-xl text-xs font-bold border border-white/5 text-slate-400 hover:text-white flex items-center gap-2">
+                    <i class="ph-bold ph-android-logo text-base"></i> Android
+                </button>
+                <button onclick="switchGuideTab('windows')" id="tab-windows" class="px-4 py-2 rounded-xl text-xs font-bold border border-white/5 text-slate-400 hover:text-white flex items-center gap-2">
+                    <i class="ph-bold ph-windows-logo text-base"></i> Windows
+                </button>
+                <button onclick="switchGuideTab('mac')" id="tab-mac" class="px-4 py-2 rounded-xl text-xs font-bold border border-white/5 text-slate-400 hover:text-white flex items-center gap-2">
+                    <i class="ph-bold ph-desktop text-base"></i> macOS
+                </button>
+            </div>
+
+            <!-- Guide Content -->
+            <div id="guide-content" class="glass-card p-6 sm:p-8">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="max-w-6xl mx-auto border-t border-white/10 py-10 my-8 relative z-20 px-4 text-xs text-slate-500">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <span class="font-bold text-slate-300">MDVPN</span>
+                <span>© 2026. ИНН: 662341531786</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-5 font-mono text-[11px]">
+                <a href="https://vk.com/mdvpn_ru" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors flex items-center gap-1 font-bold">
+                    <i class="ph-bold ph-vk-logo text-base"></i> ВКонтакте
+                </a>
+                <a href="https://t.me/mdvpn_ru" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors flex items-center gap-1">
+                    <i class="ph-bold ph-telegram-logo text-base"></i> Telegram
+                </a>
+                <a href="https://mdvpn.ru/terms" class="hover:text-slate-300 transition-colors">Оферта</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC ENGINE -->
+    <script>
+        function showToast(msg) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = `px-4 py-3 rounded-xl text-xs font-semibold border backdrop-blur-xl transition-all duration-300 flex items-center gap-2.5 shadow-2xl bg-slate-900/90 border-sky-500/50 text-sky-100`;
+            toast.innerHTML = `<i class="ph-bold ph-check-circle text-sky-400 text-lg"></i> ${msg}`;
+
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(-10px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 2800);
+        }
+
+        function setTheme(themeName) {
+            document.documentElement.classList.remove('theme-cyber', 'theme-monochrome', 'theme-titanium');
+            if (themeName === 'cyber') {
+                document.documentElement.classList.add('theme-cyber');
+                showToast('Активирована тема: Cyber Neon ⚡');
+            } else if (themeName === 'monochrome') {
+                document.documentElement.classList.add('theme-monochrome');
+                showToast('Активирована тема: Monochrome');
+            } else if (themeName === 'titanium') {
+                document.documentElement.classList.add('theme-titanium');
+                showToast('Активирована тема: Titanium Slate');
+            } else {
+                showToast('Активирована тема: Obsidian Dark');
+            }
+        }
+
+        const guideData = {
+            ios: {
+                title: 'Настройка на iOS (iPhone & iPad)',
+                app: 'Happ / Shadowrocket',
+                steps: [
+                    'Установите бесплатный клиент <b>Happ</b> или <b>Shadowrocket</b> из App Store.',
+                    'Скопируйте ссылку в Личном кабинете.',
+                    'Откройте приложение — подписка и серверы добавятся автоматически.'
+                ]
+            },
+            android: {
+                title: 'Настройка на Android',
+                app: 'Hiddify / v2rayNG',
+                steps: [
+                    'Скачайте <b>Hiddify</b> из Google Play Store.',
+                    'Скопируйте вашу VLESS ссылку и нажмите <b>«Импорт из буфера»</b> в приложении.',
+                    'Нажмите круглую кнопку подключения по центру экрана.'
+                ]
+            },
+            windows: {
+                title: 'Настройка на Windows',
+                app: 'v2rayN / Nekoray',
+                steps: [
+                    'Загрузите v2rayN или Hiddify Desktop.',
+                    'Добавьте ссылку подписки через пункт «Servers» -> «Import bulk URL».',
+                    'Включите системный прокси (System Proxy) в нижнем меню.'
+                ]
+            },
+            mac: {
+                title: 'Настройка на macOS',
+                app: 'Sing-box / Hiddify',
+                steps: [
+                    'Установите Hiddify macOS из App Store или GitHub.',
+                    'Вставьте скопированную ссылку подписки в поле «New Profile».',
+                    'Включите туннелирование для полной защиты браузеров и приложений.'
+                ]
+            }
+        };
+
+        function switchGuideTab(os) {
+            ['ios', 'android', 'windows', 'mac'].forEach(k => {
+                const btn = document.getElementById(`tab-${k}`);
+                if (btn) {
+                    if (k === os) {
+                        btn.className = "px-4 py-2 rounded-xl text-xs font-bold border bg-white/10 border-white/20 text-white flex items-center gap-2";
+                    } else {
+                        btn.className = "px-4 py-2 rounded-xl text-xs font-bold border border-white/5 text-slate-400 hover:text-white flex items-center gap-2";
+                    }
+                }
+            });
+
+            const data = guideData[os];
+            const contentEl = document.getElementById('guide-content');
+            contentEl.innerHTML = `
+                <h3 class="text-lg font-bold text-white mb-2">${data.title}</h3>
+                <p class="text-xs text-sky-400 font-mono mb-4">Рекомендуемый клиент: ${data.app}</p>
+                <ol class="space-y-3 text-xs text-slate-300 list-decimal list-inside leading-relaxed mb-6">
+                    ${data.steps.map(step => `<li class="p-2.5 rounded-lg bg-white/5 border border-white/5">${step}</li>`).join('')}
+                </ol>
+                <a href="/lk/login" class="btn-primary px-5 py-2.5 text-xs">Перейти к получению ссылки</a>
+            `;
+        }
+
+        function runSpeedTest() {
+            const btn = document.getElementById('btn-speedtest');
+            const valueEl = document.getElementById('speed-meter-value');
+            const barEl = document.getElementById('speed-bar');
+            const statusEl = document.getElementById('speed-status');
+
+            btn.disabled = true;
+            btn.classList.add('opacity-50');
+            statusEl.innerText = "Тестирование задержки и канала...";
+            
+            let current = 0;
+            const targetSpeed = Math.floor(Math.random() * 300) + 700;
+
+            const interval = setInterval(() => {
+                current += Math.floor(Math.random() * 45) + 15;
+                if (current >= targetSpeed) {
+                    current = targetSpeed;
+                    clearInterval(interval);
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-50');
+                    statusEl.innerText = "Тест завершен! Канал 10 Gbps готов.";
+                    showToast(`Результат Спидтеста: ${current} Mbps!⚡`);
+                }
+                valueEl.innerHTML = `${current} <span class="text-sm text-slate-400 font-sans">Mbps</span>`;
+                barEl.style.width = `${(current / 1000) * 100}%`;
+            }, 50);
+        }
+
+        function initInteractiveParticles() {
+            const canvas = document.getElementById('bg-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+
+            let particles = [];
+            const particleCount = Math.floor(width / 30);
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * width;
+                    this.y = Math.random() * height;
+                    this.vx = (Math.random() - 0.5) * 0.35;
+                    this.vy = (Math.random() - 0.5) * 0.35;
+                    this.radius = Math.random() * 1.2 + 0.8;
+                }
+
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > width) this.vx *= -1;
+                    if (this.y < 0 || this.y > height) this.vy *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.25)';
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+
+            window.addEventListener('resize', () => {
+                width = canvas.width = window.innerWidth;
+                height = canvas.height = window.innerHeight;
+            });
+
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                for (let i = 0; i < particles.length; i++) {
+                    particles[i].update();
+                    particles[i].draw();
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 130) {
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(56, 189, 248, ${0.08 - dist / 130 * 0.08})`;
+                            ctx.lineWidth = 0.6;
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        window.onload = function() {
+            initInteractiveParticles();
+            switchGuideTab('ios');
+        };
+        
+        // Открытие/закрытие меню по клику вместо hover
+function toggleThemeMenu(event) {
+    event.stopPropagation();
+    const dropdown = document.getElementById('theme-dropdown');
+    dropdown.classList.toggle('hidden');
+}
+
+// Закрытие меню при клике вне его области
+window.addEventListener('click', function(e) {
+    const dropdown = document.getElementById('theme-dropdown');
+    if (dropdown && !dropdown.classList.contains('hidden')) {
+        dropdown.classList.add('hidden');
+    }
+});
+
+// Обновленная функция установки темы с закрытием меню
+function setTheme(themeName) {
+    document.documentElement.classList.remove('theme-cyber', 'theme-monochrome', 'theme-titanium');
+    const label = document.getElementById('current-theme-label');
+
+    if (themeName === 'cyber') {
+        document.documentElement.classList.add('theme-cyber');
+        if(label) label.innerText = 'Cyber Neon';
+        showToast('Активирована тема: Cyber Neon ⚡');
+    } else if (themeName === 'monochrome') {
+        document.documentElement.classList.add('theme-monochrome');
+        if(label) label.innerText = 'Monochrome';
+        showToast('Активирована тема: Monochrome');
+    } else if (themeName === 'titanium') {
+        document.documentElement.classList.add('theme-titanium');
+        if(label) label.innerText = 'Titanium';
+        showToast('Активирована тема: Titanium Slate');
+    } else {
+        if(label) label.innerText = 'Obsidian';
+        showToast('Активирована тема: Obsidian Dark');
+    }
+    
+    // Скрываем меню после выбора
+    const dropdown = document.getElementById('theme-dropdown');
+    if(dropdown) dropdown.classList.add('hidden');
+}
+    </script>
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=112534921', 'ym');
+
+    ym(112534921, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/112534921" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+    
+</body>
+</html>

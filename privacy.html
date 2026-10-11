@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности | MDVPN</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <style>
+        :root {
+            --bg-main: #060911;
+            --card-bg: rgba(13, 19, 33, 0.75);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --card-hover-border: rgba(56, 189, 248, 0.4);
+            --accent-color: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.25);
+            --text-primary: #F8FAFC;
+            --text-muted: #94A3B8;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            line-height: 1.6;
+        }
+
+        #bg-canvas {
+            position: fixed;
+            inset: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid var(--card-border);
+            border-radius: 1.25rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--card-border);
+            color: var(--text-primary);
+            font-weight: 600;
+            border-radius: 0.85rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #FFFFFF 0%, #94A3B8 50%, #38BDF8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen relative overflow-x-hidden antialiased flex flex-col justify-between">
+
+    <!-- CANVAS BACKGROUND -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/75 border-b border-white/10 px-4 md:px-8 py-3.5 relative">
+        <div class="max-w-4xl mx-auto flex justify-between items-center">
+            <a href="/" class="flex items-center gap-3 group">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 flex items-center justify-center text-slate-950 font-black shadow-lg shadow-sky-500/20">
+                    <i class="ph-bold ph-lightning text-xl"></i>
+                </div>
+                <span class="text-lg font-extrabold tracking-tight text-white">MDVPN</span>
+            </a>
+            <a href="/lk/" class="btn-secondary px-4 py-2 text-xs">
+                В кабинет
+            </a>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="max-w-4xl mx-auto px-4 py-16 relative z-10 w-full flex-grow">
+        
+        <header class="mb-12">
+            <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-4 tracking-tight">
+                Политика <span class="gradient-text">приватности</span>
+            </h1>
+            <div class="flex flex-wrap gap-3 items-center text-xs text-slate-400 font-mono">
+                <span class="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-full border border-white/5 text-emerald-400">
+                    <i class="ph-bold ph-shield-check"></i> Защита данных
+                </span>
+                <span class="flex items-center gap-1.5 bg-white/5 px-3 py-1 rounded-full border border-white/5 text-sky-400">
+                    <i class="ph-bold ph-eye-slash"></i> 100% Анонимность
+                </span>
+            </div>
+        </header>
+
+        <div class="grid md:grid-cols-[220px_1fr] gap-8 items-start">
+            
+            <aside class="hidden md:block sticky top-28 h-fit space-y-1.5 text-xs">
+                <p class="font-mono uppercase tracking-wider text-slate-500 mb-3 px-2">Разделы</p>
+                <a href="#section-1" class="block px-3 py-2 rounded-xl bg-sky-500/10 text-sky-300 font-bold border border-sky-500/20">1. No-Logs Policy</a>
+                <a href="#section-2" class="block px-3 py-2 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition">2. Сбор данных</a>
+                <a href="#section-3" class="block px-3 py-2 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition">3. Оплата и финансы</a>
+                <a href="#section-4" class="block px-3 py-2 rounded-xl text-slate-400 hover:bg-white/5 hover:text-white transition">4. Ваши права</a>
+            </aside>
+
+            <div class="space-y-8 text-sm text-slate-300">
+                
+                <p class="text-base leading-relaxed text-slate-200">
+                    Ваша приватность — фундаментальная ценность сервиса MDVPN. Этот документ написан простым языком, чтобы вы точно понимали, как мы защищаем вашу цифровую свободу.
+                </p>
+
+                <section id="section-1" class="glass-card p-6 md:p-8 border-sky-500/30 bg-sky-500/[0.02] relative overflow-hidden">
+                    <h2 class="text-xl font-bold text-white mb-4 flex items-center gap-2.5">
+                        <i class="ph-bold ph-shield-check text-sky-400 text-lg"></i> Strict No-Logs Policy
+                    </h2>
+                    <p class="mb-4 text-slate-300 text-xs md:text-sm">Мы технически не можем передать ваши данные третьим лицам или государственным органам, потому что <b>мы их не храним</b>.</p>
+                    
+                    <div class="space-y-2.5 text-xs md:text-sm">
+                        <div class="flex items-start gap-2.5">
+                            <i class="ph-bold ph-x-circle text-red-400 mt-0.5 text-base shrink-0"></i>
+                            <p><b>Мы НЕ сохраняем ваш IP-адрес</b> при подключении к нашим серверам.</p>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <i class="ph-bold ph-x-circle text-red-400 mt-0.5 text-base shrink-0"></i>
+                            <p><b>Мы НЕ логируем DNS-запросы.</b> Никто не знает, какие сайты вы посещаете.</p>
+                        </div>
+                        <div class="flex items-start gap-2.5">
+                            <i class="ph-bold ph-x-circle text-red-400 mt-0.5 text-base shrink-0"></i>
+                            <p><b>Мы НЕ анализируем ваш трафик.</b> Скачанные файлы и переписки остаются невидимыми.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-2" class="glass-card p-6 md:p-8">
+                    <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                        <span class="text-sky-400 font-mono text-xs">02.</span> Какие данные мы собираем
+                    </h2>
+                    <p class="mb-3 text-xs md:text-sm">Для работы личного кабинета и выдачи конфигураций используется необходимый минимум:</p>
+                    <ul class="list-disc list-inside space-y-1.5 text-slate-400 text-xs md:text-sm mb-4">
+                        <li><b>VK ID</b> — цифровой идентификатор профиля для быстрой авторизации без паролей.</li>
+                        <li><b>Технические UUID</b> — случайно сгенерированные идентификаторы для ключей (Xray / AmneziaWG).</li>
+                        <li><b>Статус подписки</b> — дата окончания тарифа и баланс внутреннего кошелька.</li>
+                    </ul>
+                    <div class="p-3.5 rounded-xl bg-sky-500/10 border border-sky-500/20 text-xs text-sky-200">
+                        Мы не запрашиваем и не храним ваш номер телефона, email или настоящее имя.
+                    </div>
+                </section>
+
+                <section id="section-3" class="glass-card p-6 md:p-8">
+                    <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                        <span class="text-sky-400 font-mono text-xs">03.</span> Оплата и финансовая информация
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm">
+                        MDVPN не обрабатывает и не хранит данные банковских карт. Транзакции проходят на стороне защищенных платежных шлюзов. Мы получаем лишь системное уведомление об успешном пополнении.
+                    </p>
+                </section>
+
+                <section id="section-4" class="glass-card p-6 md:p-8">
+                    <h2 class="text-lg font-bold text-white mb-3 flex items-center gap-2">
+                        <span class="text-sky-400 font-mono text-xs">04.</span> Ваши права и удаление данных
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm mb-3">
+                        Вы — полноправный владелец своих данных. Вы вправе запросить полное удаление профиля из базы.
+                    </p>
+                    <p class="text-slate-400 text-xs md:text-sm">
+                        Для удаления аккаунта и уничтожения ключей обратитесь в поддержку в Telegram: <a href="https://t.me/mdvpn_ru" class="text-sky-400 hover:underline font-mono">@mdvpn_ru</a>.
+                    </p>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="max-w-4xl mx-auto w-full border-t border-white/10 py-8 px-4 text-xs text-slate-500 relative z-20 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>&copy; 2026 MDVPN Infrastructure. Все права защищены.</div>
+        <div class="flex items-center gap-4 font-mono text-[11px]">
+            <a href="https://t.me/mdvpn_ru" target="_blank" rel="noopener noreferrer" class="hover:text-sky-400 transition-colors">Поддержка</a>
+            <a href="/terms" class="hover:text-sky-400 transition-colors">Оферта</a>
+        </div>
+    </footer>
+
+    <!-- JS (Фоновые частицы) -->
+    <script>
+        function initInteractiveParticles() {
+            const canvas = document.getElementById('bg-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let width = canvas.width = window.innerWidth;
+            let height = canvas.height = window.innerHeight;
+            let particles = [];
+            for (let i = 0; i < Math.floor(width / 30); i++) {
+                particles.push({x: Math.random()*width, y: Math.random()*height, vx: (Math.random()-0.5)*0.35, vy: (Math.random()-0.5)*0.35, radius: Math.random()*1.2+0.8});
+            }
+            window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
+            function animate() {
+                ctx.clearRect(0, 0, width, height);
+                particles.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > width) p.vx *= -1; if (p.y < 0 || p.y > height) p.vy *= -1;
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255, 255, 255, 0.25)'; ctx.fill();
+                });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+        window.onload = initInteractiveParticles;
+    </script>
+</body>
+</html>

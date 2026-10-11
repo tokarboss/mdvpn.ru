@@ -1,0 +1,10 @@
+User-agent: *
+Disallow: /lk/
+Disallow: /handler.php
+
+User-agent: Yandex
+Disallow: /lk/
+Disallow: /handler.php
+Clean-param: ref /
+
+Sitemap: https://mdvpn.ru/sitemap.xml
